@@ -10,29 +10,37 @@ class LoginController extends Controller
 {
     public function showLoginForm()
     {
-        return view('login.loginklub'); // Pastikan Anda memiliki view auth/login.blade.php
+        return view('login.loginklub'); // Pastikan Anda memiliki view login.loginklub.blade.php
     }
 
     public function login(Request $request)
     {
+        // Validasi input
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
             'role' => 'required|in:admin,klub',
         ]);
-    
+
+        // Coba autentikasi user
         if (Auth::attempt($request->only('email', 'password'))) {
             $user = Auth::user();
-            
-            // Menyimpan role ke session
-            session(['role' => $request->role]);
-    
-            return redirect()->intended('/dashboard');
+
+            // Periksa apakah role cocok
+            if ($user->role !== $request->role) {
+                Auth::logout(); // Logout jika role tidak sesuai
+                return back()->withErrors(['role' => 'Role tidak sesuai dengan akun Anda.']);
+            }
+
+            // Redirect sesuai role
+            if ($user->role === 'admin') {
+                return redirect()->route('admin.dashboard'); // Redirect ke dashboard admin
+            } elseif ($user->role === 'klub') {
+                return redirect()->route('klub.dashboard'); // Redirect ke dashboard klub
+            }
         }
-    
+
+        // Jika autentikasi gagal
         return back()->withErrors(['email' => 'Email atau password salah.']);
     }
-    
-    
 }
-

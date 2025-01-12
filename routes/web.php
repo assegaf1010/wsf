@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Models\Berita;
 use App\Models\Kegiatan;
+use App\Http\Middleware\CheckRole;
 use App\Http\Controllers;
 
 
@@ -31,11 +32,27 @@ Route::get('/kegiatan', [Controllers\KegiatanController::class, 'kegiatan'])->na
 Route::get('/berita', [Controllers\BeritaController::class, 'berita'])->name('berita');
 
 
+// Rute User Klub
+Route::group(['middleware' => ['auth'],['redirect.role:klub']], function () {
+    Route::get('/klub/dashboard', [Controllers\KlubController::class, 'dashboard'])->name('klub.dashboard');
+    Route::get('/profileklub', [Controllers\KlubController::class, 'profileklub'])->name('profileklub');
+    Route::get('/atletklub', [Controllers\KlubController::class, 'atletklub'])->name('atletklub');
+    Route::get('/kegiatanklub', [Controllers\KlubController::class, 'kegiatanklub'])->name('kegiatanklub');
+    Route::get('/pengumumanklub', [Controllers\KlubController::class, 'pengumumanklub'])->name('pengumumanklub');
+    Route::get('/atlet/create', [Controllers\AtletController::class, 'create'])->name('atlet.create');
+    Route::post('/atlet', [Controllers\AtletController::class, 'store'])->name('atlet.store');
+
+    Route::get('/pengumumanklubdet', [Controllers\KlubController::class, 'pengumumanklubdet'])->name('pengumumanklubdet');
+    Route::get('/pengumumanklubdet/{berita:slug}', [Controllers\KlubController::class, 'pengumumanklubdet'])->name('klub.pengumumanklubdet');
+
+    Route::get('/kegiatanklubdet/{kegiatan:slug}', [COntrollers\KlubController::class, 'kegiatanklubdet'])->name('Kegiatan.kegiatanklubdet');
+
+});
 
 // Rute Admin
 
-Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('/dashboard', [Controllers\AdminController::class, 'dashboard'])->name('admin.dashboard');
+Route::group(['middleware' => ['auth'],['redirect.role:admin']], function () {
+    Route::get('/admin/dashboard', [Controllers\AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/profileadmin', [Controllers\AdminController::class, 'profileadmin'])->name('profileadmin');
     Route::get('/klubadmin', [Controllers\AdminController::class, 'klubadmin'])->name('klubadmin');
     Route::get('/atletadmin', [Controllers\AdminController::class, 'atletadmin'])->name('atletadmin');
@@ -83,7 +100,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 Route::get('/register', function () {
     return view('register');
-});
+})->middleware(CheckRole::class.':admin');;
 
 Route::get('/visi', function () {
     return view('visi');
@@ -115,9 +132,9 @@ Route::post('/register/klub', [Controllers\KlubController::class, 'register']);
 
 
 
-Route::middleware(['auth', 'role:klub'])->group(function () {
-    Route::get('/klub/dashboard', [Controllers\KlubController::class, 'dashboard'])->name('klub.dashboard');
-});
+// Route::middleware(['auth', 'role:klub'])->group(function () {
+//     Route::get('/klub/dashboard', [Controllers\KlubController::class, 'dashboard'])->name('klub.dashboard');
+// });
 
 
 // Route::get('/Admin/dashboardadmin', [Controllers\AdminController::class, 'dashboard'])->name('admin.dashboard');

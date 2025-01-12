@@ -16,7 +16,6 @@
           <th class="py-2 px-4 border-b text-left text-sm font-semibold text-gray-600">Nama Kegiatan</th>
           <th class="py-2 px-4 border-b text-left text-sm font-semibold text-gray-600">Tanggal</th>
           <th class="py-2 px-4 border-b text-left text-sm font-semibold text-gray-600">Venue</th>
-          <th class="py-2 px-4 border-b text-left text-sm font-semibold text-gray-600">Klub Terdaftar</th>
           <th class="py-2 px-4 border-b text-left text-sm font-semibold text-gray-600">Aksi</th>
         </tr>
       </thead>
@@ -26,7 +25,6 @@
           <td class="py-2 px-4 border-b text-sm text-gray-800">{{$kegiatan->title}}</td>
           <td class="py-2 px-4 border-b text-sm text-gray-800">{{$kegiatan->jadwal}}</td>
           <td class="py-2 px-4 border-b text-sm text-gray-800">{{$kegiatan->tempat}}</td>
-          <td class="py-2 px-4 border-b text-sm text-gray-800">20</td>
           <td class="py-2 px-4 border-b text-sm">
             <a href="/kegiatanadmindet/{{$kegiatan['slug']}}" class="text-blue-600 hover:text-blue-800 font-semibold">Lihat Detail</a>
           </td>

@@ -3,7 +3,7 @@
         <section class="py-12 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Daftar Kegiatan</h2>
-                <div class="space-y-6 h-96">
+                <div class="space-y-6 h-fit">
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 ">
                         @foreach($kegiatans as $kegiatan)
                             <div class="p-6 bg-gray-100 rounded-lg shadow-md">

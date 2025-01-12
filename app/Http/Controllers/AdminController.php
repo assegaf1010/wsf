@@ -7,6 +7,7 @@ use App\Models\Club;
 use App\Models\Atlet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 
 class AdminController extends Controller
@@ -14,11 +15,15 @@ class AdminController extends Controller
 
     public function dashboard()
     {
+        $clubs = Club::all();
+        $countc = Club::count();
+        $countk = Kegiatan::count();
+        $countb = Berita::count();
         $beritas = Berita::all();
         $kegiatans = Kegiatan::all();
         $role = Auth::user()->role;
-
-        return view('Admin.dashboardadmin', compact('beritas', 'kegiatans','role'));
+        $users = User::where('role', 'klub')->get();
+        return view('Admin.dashboardadmin', compact('beritas', 'kegiatans','role','users','clubs','countc','countk','countb'));
     }
 
     public function profileadmin()
@@ -28,7 +33,8 @@ class AdminController extends Controller
 
     public function klubadmin()
     {
-        return view ('admin.klubadmin');
+        $clubs = Club::all();
+        return view ('admin.klubadmin', compact('clubs'));
     }
 
     public function atletadmin()

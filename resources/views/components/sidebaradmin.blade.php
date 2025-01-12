@@ -11,7 +11,7 @@
       <nav class="mt-6 justify-center text-center text-neutral-500 font-bold ">
         <ul>
           <li class="px-6 mb-4">
-            <a href="/dashboard" class="block py-2.5 px-4 rounded-xl shadow  hover:bg-blue-500 hover:text-white ">
+            <a href="/admin/dashboard" class="block py-2.5 px-4 rounded-xl shadow  hover:bg-blue-500 hover:text-white ">
               Dashboard
             </a>
           </li>

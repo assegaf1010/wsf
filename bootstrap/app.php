@@ -16,3 +16,9 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();
+
+    $middleware->alias([
+        'role' => \App\Http\Middleware\RoleMiddleware::class, 
+        'redirect.role' => \App\Http\Middleware\RedirectBasedOnRole::class,
+    ]);
+

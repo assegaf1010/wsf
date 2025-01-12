@@ -10,6 +10,7 @@ class CheckRole
 {
     public function handle(Request $request, Closure $next, $role)
     {
+        dd('Middleware bekerja', $role);
         // Mengecek apakah pengguna terautentikasi dan role-nya sesuai dengan yang diminta
         if (Auth::check() && Auth::user()->role !== $role) {
             return redirect('/login')->with('error', 'Akses ditolak, role tidak sesuai');

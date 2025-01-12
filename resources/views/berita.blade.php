@@ -9,16 +9,6 @@
     <div class="flex flex-col md:flex-row gap-8">
         <!-- Sidebar -->
         <div class="w-3/12 md:w-1/4 space-y-6 gap-x-2">
-            <!-- Kategori Berita -->
-            <div class="bg-white p-4 rounded-lg shadow-md mb-6">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Kategori Berita</h3>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-blue-500 hover:text-blue-700">Prestasi Atlet</a></li>
-                    <li><a href="#" class="text-blue-500 hover:text-blue-700">Kegiatan</a></li>
-                    <li><a href="#" class="text-blue-500 hover:text-blue-700">Kompetisi</a></li>
-                    <li><a href="#" class="text-blue-500 hover:text-blue-700">Tips Latihan</a></li>
-                </ul>
-            </div>
 
             <!-- Pencarian -->
             <div class="bg-white p-4 rounded-lg shadow-md mb-6">
@@ -47,7 +37,7 @@
 
                 <!-- Container Cards -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                @foreach ($beritas->take(3) as $berita)
+                @foreach ($beritas as $berita)
                     <div class="bg-white rounded-lg shadow-md overflow-hidden">
                         <img src="/storage/{{$berita['gambar']}}" alt="News Image" class="w-full h-48 object-cover">
                         <div class="p-6">

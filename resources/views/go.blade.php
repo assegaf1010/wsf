@@ -30,7 +30,7 @@
 
       <!-- Container Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        @foreach($kegiatans->take(9) as $kegiatan)
+        @foreach($kegiatans->take(3) as $kegiatan)
         <div class="p-6 bg-gray-100 rounded-lg shadow-md">
           <h3 class="text-xl font-semibold text-gray-800 mb-2">{{$kegiatan['title']}}</h3>
           <p class="text-gray-600 mb-1">Tanggal: {{$kegiatan['jadwal']}}</p>

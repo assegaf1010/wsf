@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Berita;
 use App\Models\Kegiatan;
+use App\Models\Club;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -10,7 +11,8 @@ class PageController extends Controller
     public function __invoke()
     {
         $beritas = Berita::all();
-        $kegiatans = Kegiatan::all();
+        $kegiatans = Kegiatan::latest()->take(3)->get();
+
 
         return view('go', compact('beritas','kegiatans'));
     }
@@ -29,7 +31,9 @@ class PageController extends Controller
     }
     public function club()
     {
-        return view('club');
+
+        $clubs = Club::all();
+        return view('club', compact('clubs'));
     }
 
     public function login()

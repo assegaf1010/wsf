@@ -9,6 +9,7 @@ class RoleMiddleware
 {
     public function handle($request, Closure $next, $role)
     {
+        dd('Middleware bekerja', $role);
         
         if (Auth::check() && Auth::user()->role === $role) {
             return $next($request);

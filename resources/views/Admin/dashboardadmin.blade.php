@@ -17,19 +17,19 @@
           <!-- Cards -->
           <div class="bg-white p-3 rounded-2xl shadow">
             <h3 class="text-sm font-medium">Jumlah Klub Terdaftar</h3>
-            <h2 class="text-xl pl-2 font-bold mt-2 text-blue-500">30</h2>
+            <h2 class="text-xl pl-2 font-bold mt-2 text-blue-500">{{ $countc }}</h2>
           </div>
           <div class="bg-white p-3 rounded-2xl shadow">
             <h3 class="text-sm font-medium">Total Atlet Aktif</h3>
             <h2 class="text-xl font-bold mt-2 text-blue-500">150</h2>
           </div>
           <div class="bg-white p-3 rounded-2xl shadow">
-            <h3 class="text-sm font-medium">Pembayaran Tertunda</h3>
-            <h2 class="text-xl font-bold mt-2 text-blue-500">5</h2>
+            <h3 class="text-sm font-medium">Jumlah Pengumuman</h3>
+            <h2 class="text-xl font-bold mt-2 text-blue-500">{{$countb}}</h2>
           </div>
           <div class="bg-white p-3 rounded-2xl shadow">
-            <h3 class="text-sm font-medium">Kegiatan Mendatang</h3>
-            <h2 class="text-xl font-bold mt-2 text-blue-500">8</h2>
+            <h3 class="text-sm font-medium">Jumlah Kegiatan</h3>
+            <h2 class="text-xl font-bold mt-2 text-blue-500">{{$countk}}</h2>
           </div>
         </div>
 

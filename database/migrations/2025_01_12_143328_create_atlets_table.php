@@ -9,16 +9,14 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('atlets', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('slug')->unique();
-            $table->string('kategori');
-            $table->string('tanggal_lahir');
-            $table->text('jenis_kelamin');
-            $table->foreignId('club_id')->constrained('clubs')->onDelete('cascade');
+            $table->string('nama_atlet');
+            $table->date('tanggal_lahir');
+            $table->unsignedBigInteger('club_id');  // Relasi dengan tabel clubs
+            $table->foreign('club_id')->references('id')->on('clubs')->onDelete('cascade');
             $table->timestamps();
         });
     }
