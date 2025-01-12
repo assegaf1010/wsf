@@ -1,0 +1,575 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }  
+  body {
+    font-family: Arial, sans-serif;
+  }  
+  .navbar {/*navbar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 60px 10px 60px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #ddd;
+    position: sticky; /* Membuat navbar sticky */
+    top: 0; /* Menempel di bagian atas layar */
+    z-index: 1000; /* Memastikan navbar ada di atas elemen lain */
+  }
+  .logo {
+    display: flex;
+    align-items: center; /* Menjaga teks sejajar secara vertikal */
+    gap: 10px; /* Jarak antara "WSF" dan teks span */
+  }  
+  .logo a {
+    font-size: 30px;
+    font-weight: bold;
+    color: #1E65E8;
+    text-decoration: none;
+  }  
+  .logo span {
+    font-size: 16px;
+    color: #1E65E8;
+    margin-left: 0; /* Hilangkan margin kiri agar lebih rapi */
+    display: inline-block; /* Pastikan teks dalam satu baris */
+    font-weight: 600;
+  }
+    
+  .btn-link{
+    display: flex;
+    gap: 2em;
+  }
+    
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+    
+  .nav-links a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
+  }
+    
+  .nav-links a:hover {
+    color: #0056b3;
+  }
+    
+  .auth-buttons .btn {
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+    
+  .auth-buttons .login {
+    color: #fff;
+    background-color: #1E65E8;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+    
+  .auth-buttons .login:hover {
+    background-color: #ffffff;
+    color: #1E65E8;
+  }
+    
+  .auth-buttons .register {
+    color: #1E65E8;
+    border: 1px solid #1E65E8;
+    background-color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+    
+  .auth-buttons .register:hover {
+    background-color: #1E65E8;
+    color: #fff;
+  }/*navbar*/
+  .section-landingpage { /* landing page*/
+    background-image: url(img/background.png);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%; 
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center;
+  }
+  .text-page {
+    text-align: left;
+    padding-left: 60px;
+    padding-right: 60px;
+    color: #fff;
+  }  
+  .text-page h1{
+    margin-bottom: 10px;
+    font-size: 38px;
+  }
+  .text-page p{
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+  .btn-gabung {
+    color: #fff;
+    background-color: #1E65E8;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .btn-gabung:hover{
+    background-color: #ffffff;
+    color: #1E65E8;/*landing page*/
+  }
+  .section-berita{/*beritalp*/
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #F3F4F6;
+  }
+  .container-news{
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    align-items: center;
+  }
+  .first-card{
+    width: 610px;
+    height: 450px;
+    background-color: #ffffff;
+    line-height: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  .first-card:hover {
+    transform: translateY(-5px);
+  }
+  .in-containernews{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .second-card{
+    height: 200px;
+    width : 610px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  .second-card:hover {
+    transform: translateY(-5px);
+  }
+  .news-img{
+    height: 100px;
+    background-color: #000
+  }
+  .view-all-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1E65E8;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .view-all-btn:hover{
+    background-color: #ffffff;
+    color: #1E65E8;
+    border: 1px solid #1E65E8 ;
+  }/*beritalp*/
+  .section-kegiatan{/*kegiatanlp*/
+    width: 100%;
+    height: 75vh;
+    text-align: center;
+    background-color: #E0E0E1;
+  }
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-top: 20px
+  }
+  .news-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  .news-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  .news-card:hover {
+    transform: translateY(-5px);
+  }
+  .news-image {
+    background-color: #000;
+    height: 150px;
+  }
+  .news-content {
+    padding: 15px;
+    text-align: left;
+    background-color: #F3F4F6;
+  }
+  .news-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .news-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  .read-more {
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #1E65E8;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 5px;
+  }
+  .read-more:hover {
+    background-color: #ffffff;
+    color: #1E65E8;
+    border: 1px solid #1E65E8 ;
+  }
+  .view-more-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1E65E8;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .view-more-btn:hover{
+    background-color: #ffffff;
+    color: #1E65E8;
+    border: 1px solid #1E65E8 ;
+  }/*kegiatanlp*/
+  .section-beritaterkini{/*berita terkini*/
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #F3F4F6;
+    padding-left: 60px;
+    padding-right: 60px;
+    gap: 20px;
+  }
+  .all-news-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tiga kolom */
+    gap: 20px; /* Jarak antar kartu */
+  }
+  .news-all-card{
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  .news-all-card:hover {
+    transform: translateY(-5px);
+  }/* berita terkini*/
+  .login-container{/*login federasi*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    background-color: #d9d9d9;
+  }
+  .login-box {
+    background: #fff;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #007bff;
+    text-align: center;
+  }
+  h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  .tab-menu {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  .tab-menu button {
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px;
+    color: #333;
+    border-bottom: 2px solid transparent;
+  }
+  .tab-menu .active {
+    border-bottom: 2px solid #1E65E8;
+  }
+  .tab-menu a{
+    text-decoration: none;
+    color: #000000;
+  }
+  .form-group {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  .form-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #1E65E8;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .forgot-password {
+    text-align: right;
+    font-size: 12px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  .forgot-password a {
+    text-decoration: none;
+    color: #000000;
+  }
+  .forgot-password a:hover {
+    text-decoration: underline;
+  }
+  .login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #1E88E5;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  .login-btn:hover{
+    background-color: #ffffff;
+    color: #1E88E5 ;
+    border: 1px solid #1E88E5 ;
+  }
+  .register-link {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #000000;
+    text-align: right;
+  }
+  .register-link a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000000;
+  }
+  .register-link a:hover {
+    text-decoration: underline;
+  }/*login federasi*/
+  .register{/*register*/
+    height: 100vh;
+    width: 100%;
+    background-color: #ffffff;
+    padding-left: 60px;
+  }
+  .section-title-registrasi{
+    line-height: 40px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+  }
+  .section-title-registrasi h1{
+    font-size: 25px;
+  }
+  .section-title-registrasi p{
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .form-zero{
+    display: flex;
+    gap: 50px;
+  }
+  .form-registrasi{
+    margin-bottom: 10px;
+  }
+  .form-registrasi input{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #1E65E8;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .form-registrasi label{
+    font-size: 14px;
+    color: #000000;
+  }
+  .ket{
+    font-size: 10px;
+  }
+  .form-registrasi-alamat{
+    margin-bottom: 15px;
+  }
+  .form-registrasi-alamat label{
+    font-size: 14px;
+    color: #000000;
+  }
+  .form-registrasi-alamat input{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #1E65E8;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+    height: 117px;
+    text-align: left;
+  }
+  .first, .second{
+    margin-bottom: 55px;
+  }
+  .login-link{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #000000;
+    text-align: right;
+  }
+  .login-link a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #000000;
+  }
+  .register-btn{
+    width: 53%;
+    padding: 10px;
+    background-color: #1E88E5;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  .register-btn:hover{
+    background-color: #ffffff;
+    color: #1E88E5 ;
+    border: 1px solid #1E88E5 ;
+  }/*reset*/
+  .reset-container{/*reset sandi*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    background-color: #ffffff;
+    width: 100%;
+    height: 100vh;
+  }
+  .reset-box{
+    background: #fff;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #007bff;
+    text-align: center;
+  }
+  .reset-bold{
+    font-size: 12px;
+    font-weight: bold;
+    text-align: justify;
+  }
+  .reset-thick{
+    font-size: 13px;
+    text-align: justify;
+  }
+  .reset-link{
+    text-align: left;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  .reset-link a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 12px;
+  
+  }
+  .reset-link a:hover {
+    text-decoration: underline;
+  }
+  footer{/*footerlp*/
+    background-color: #202938;
+    justify-content: space-between;
+    text-align: center;
+  }
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    max-width: 75%;
+    text-align: left;
+  }
+  .footer-content div {
+    max-width: 300px;
+    margin: 10px;
+    padding-top: 10px;
+  }
+  .footer-content h1 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+  }
+  .footer-content p {
+    font-size: 12px;
+    line-height: 1em;
+    color: #ffffff; 
+  }
+  .follow{
+    text-align: left;
+  }
+  .follow a img {
+    width: 30px;
+    display: flex;
+    margin-right: 1em;
+  }
+  .social-media{
+    display: flex;
+  
+  }
+  footer p {
+    font-size: 12px;
+    padding-bottom: 20px;
+    color: #ffffff;
+  }/*footerlp*/
+  
