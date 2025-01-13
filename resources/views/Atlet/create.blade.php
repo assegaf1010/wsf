@@ -1,6 +1,6 @@
 <x-layoutuser>
     <main>
-        <div class="max-w-lg mx-auto p-8">
+        <div class="max-w-lg mx-auto p-8 bg-white rounded-xl shadow">
             <h2 class="text-2xl font-semibold text-center mb-4">Tambah Atlet</h2>
             <form action="{{ route('atlet.store') }}" method="POST">
                 @csrf

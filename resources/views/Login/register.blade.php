@@ -52,7 +52,7 @@
                             </div>
                             <div>
                                 <label for="tanggal_berdiri" class="block text-sm font-medium text-gray-700">Tanggal Berdiri</label>
-                                <input id="tanggal_berdiri" name="tanggal_berdiri" type="text" required class="mt-1 p-2 w-full border rounded-md" placeholder="ex:22-08-1999">
+                                <input id="tanggal_berdiri" name="tanggal_berdiri" type="text" required class="mt-1 p-2 w-full border rounded-md" placeholder="ex:1999-08-09">
                             </div>
                         </div>
 
