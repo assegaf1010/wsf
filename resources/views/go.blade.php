@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-100">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WSF</title>
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    @vite('resources/css/app.css')
-
-</head>
-<body class="">
-    <x-navbar></x-navbar>
-
-
-    <x-navbar></x-navbar>
+<x-layout>
+  <x-navbar></x-navbar>
   <div class="relative w-full h-full">
   <!-- Gambar -->
   <img src="css/img/background.png" alt="Gradient Image" class="w-full h-full object-cover">
@@ -73,25 +60,4 @@
 
     </div>
   </section>
-
-<x-footer></x-footer>
-
-</div>
-
-<script>
-  const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  mobileMenuButton.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.contains('hidden');
-    if (isOpen) {
-      mobileMenu.classList.remove('hidden');
-    } else {
-      mobileMenu.classList.add('hidden');
-    }
-  });
-</script>
-
-
-</body>
-</html>
+</x-layout>
