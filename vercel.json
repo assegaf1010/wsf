@@ -15,8 +15,8 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://swimmingfederation.vercel.app/",
-        "APP_KEY": "base64:E6deVmsV8w8Ax4t7HZCi8Dqa8wjIwYpY8MnUhIfKooA=",
+        "APP_URL": "https://sistem-hotel-zeta.vercel.app",
+        "APP_KEY": "base64:TGaVaXwhWgjn9akhE4SCSIjGG/cQqvICUQ+PgLA3Bs0=",
         "ASSET_URL": "/",
         "SESSION_DRIVER": "cookie",
         "CACHE_DRIVER": "database",
