@@ -12,13 +12,13 @@ class KegiatanController extends Controller
     {
         $kegiatans = Kegiatan::all();
 
-        return view('kegiatan.kegiatan', compact('kegiatans'));
+        return view('Kegiatan.kegiatan', compact('kegiatans'));
     }
 
 
     public function create()
     {
-        return view('kegiatan.create');
+        return view('Kegiatan.create');
     }
 
     public function show(Kegiatan $kegiatan)

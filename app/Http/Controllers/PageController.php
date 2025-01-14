@@ -43,16 +43,16 @@ class PageController extends Controller
 
     public function register()
     {
-        return view('login.register');
+        return view('Login.register');
     }
 
     public function createberita()
     {
-        return view('berita/create');
+        return view('Berita/create');
     }
     public function createkegiatan()
     {
-        return view('kegiatan/create');
+        return view('Kegiatan/create');
     }
 
 

@@ -12,7 +12,7 @@ class AtletController extends Controller
     {
         // Mendapatkan semua klub untuk dropdown
         $clubs = Club::all();
-        return view('atlet.create', compact('clubs'));
+        return view('Atlet.create', compact('clubs'));
     }
 
     public function store(Request $request)
@@ -27,7 +27,7 @@ class AtletController extends Controller
         // Menyimpan data atlet
         Atlet::create($request->all());
 
-        return redirect()->route('atlet.create')->with('success', 'Atlet berhasil ditambahkan!');
+        return redirect()->route('Atlet.create')->with('success', 'Atlet berhasil ditambahkan!');
     }
 }
 

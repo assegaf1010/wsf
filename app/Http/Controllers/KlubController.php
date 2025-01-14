@@ -24,7 +24,7 @@ class KlubController extends Controller
         $beritas = Berita::all();
         $kegiatans = Kegiatan::all();
         
-        return view('klub.dashboard', compact('klub','clubs','users','beritas','kegiatans'));
+        return view('Klub.dashboard', compact('klub','clubs','users','beritas','kegiatans'));
     }
 
     public function register(Request $request)
@@ -70,29 +70,29 @@ class KlubController extends Controller
 
     public function profileklub()
     {
-        return view ('klub.profileklub');
+        return view ('Klub.profileklub');
     }
     public function atletklub()
     {
         $atlets = Atlet::all();
 
-        return view ('klub.atletklub',compact('atlets',));
+        return view ('Klub.atletklub',compact('atlets',));
     }
     public function kegiatanklub()
     {
         $kegiatans = Kegiatan::all();
-        return view ('klub.kegiatanklub', compact('kegiatans'));
+        return view ('Klub.kegiatanklub', compact('kegiatans'));
     }
     public function pengumumanklub()
     {
         $beritas = Berita::all();
-        return view ('klub.pengumumanklub', compact('beritas'));
+        return view ('Klub.pengumumanklub', compact('beritas'));
     }
 
     public function pengumumanklubdet(Berita $berita)
     {
         $beritas = Berita::all();
-        return view('klub.pengumumanklubdet', ['berita' => $berita]);
+        return view('Klub.pengumumanklubdet', ['berita' => $berita]);
     }
 
     public function kegiatanklubdet(Kegiatan $kegiatan)

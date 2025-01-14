@@ -26,7 +26,7 @@ class RegisteredUserController extends Controller
 
     Auth::login($user);
 
-    return redirect()->route('klub.dashboard');
+    return redirect()->route('Klub.dashboard');
 }
 
 }

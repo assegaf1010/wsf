@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
     public function showLoginForm()
     {
-        return view('login.loginklub'); // Pastikan Anda memiliki view login.loginklub.blade.php
+        return view('Login.loginklub'); // Pastikan Anda memiliki view login.loginklub.blade.php
     }
 
     public function login(Request $request)
@@ -34,9 +34,9 @@ class LoginController extends Controller
 
             // Redirect sesuai role
             if ($user->role === 'admin') {
-                return redirect()->route('admin.dashboard'); // Redirect ke dashboard admin
+                return redirect()->route('Admin.dashboard'); // Redirect ke dashboard admin
             } elseif ($user->role === 'klub') {
-                return redirect()->route('klub.dashboard'); // Redirect ke dashboard klub
+                return redirect()->route('Klub.dashboard'); // Redirect ke dashboard klub
             }
         }
 

@@ -19,12 +19,12 @@ class BeritaController extends Controller
 
     public function create()
     {
-        return view('berita.create');
+        return view('Berita.create');
     }
 
     public function show(Berita $berita)
     {
-        return view('beritadet', ['berita' => $berita]);
+        return view('Beritadet', ['berita' => $berita]);
     }
 
     public function store(Request $request)

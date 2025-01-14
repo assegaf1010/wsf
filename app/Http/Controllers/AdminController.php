@@ -28,20 +28,20 @@ class AdminController extends Controller
 
     public function profileadmin()
     {
-        return view ('admin.profileadmin');
+        return view ('Admin.profileadmin');
     }
 
     public function klubadmin()
     {
         $clubs = Club::all();
-        return view ('admin.klubadmin', compact('clubs'));
+        return view ('Admin.klubadmin', compact('clubs'));
     }
 
     public function atletadmin()
     {
 
         $atlets = Atlet::all();
-        return view ('admin.atletadmin', compact('atlets'));
+        return view ('Admin.atletadmin', compact('atlets'));
     }
 
 
@@ -53,12 +53,12 @@ class AdminController extends Controller
 
         $kegiatans = Kegiatan::all();
 
-        return view ('admin.kegiatanadmin', compact('kegiatans'));
+        return view ('Admin.kegiatanadmin', compact('kegiatans'));
     }
 
     public function kegiatanadmindet(Kegiatan $kegiatan)
     {
-        return view('kegiatan.kegiatanadmindet', ['kegiatan' => $kegiatan]);
+        return view('Kegiatan.kegiatanadmindet', ['kegiatan' => $kegiatan]);
     }
 
 
@@ -69,13 +69,13 @@ class AdminController extends Controller
     {
         $beritas = Berita::all();
 
-        return view ('admin.pengumumanadmin', compact('beritas'));
+        return view ('Admin.pengumumanadmin', compact('beritas'));
     }
 
 
     public function pengumumanadmindet(Berita $berita)
     {
-        return view('admin.pengumumanadmindet', ['berita' => $berita]);
+        return view('Admin.pengumumanadmindet', ['berita' => $berita]);
     }
 
     public function edit(Berita $berita)
@@ -114,7 +114,7 @@ class AdminController extends Controller
         // Misalnya, ambil data berita berdasarkan ID atau slug
         $berita = Berita::findOrFail($berita);
 
-        return view('admin.pengumumandet', compact('berita'));
+        return view('Admin.pengumumandet', compact('berita'));
     }
 
     public function destroy(Berita $berita)
