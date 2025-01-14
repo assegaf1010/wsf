@@ -3,7 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 export default {
     content: [
-      "./resources/**/*.blade.php",
+      "./Resources/**/*.blade.php",
       "./resources/**/*.js",
       "./resources/**/*.vue",
     ],
