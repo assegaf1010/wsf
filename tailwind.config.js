@@ -1,7 +1,7 @@
 module.exports = {
   important: true,
   content: [
-    './resources/**/*.blade.php',
+    './resources/views/**/*.blade.php',
     './resources/**/*.js',
     './resources/**/*.vue',
   ],
