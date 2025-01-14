@@ -52,7 +52,7 @@ Route::group(['middleware' => ['auth'],['redirect.role:klub']], function () {
 // Rute Admin
 
 Route::group(['middleware' => ['auth'],['redirect.role:admin']], function () {
-    Route::get('/Admin/dashboard', [Controllers\AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/Admin/dashboard', [Controllers\AdminController::class, 'dashboard'])->name('Admin.dashboard');
     Route::get('/profileadmin', [Controllers\AdminController::class, 'profileadmin'])->name('profileadmin');
     Route::get('/klubadmin', [Controllers\AdminController::class, 'klubadmin'])->name('klubadmin');
     Route::get('/atletadmin', [Controllers\AdminController::class, 'atletadmin'])->name('atletadmin');

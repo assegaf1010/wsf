@@ -23,7 +23,7 @@ class AdminController extends Controller
         $kegiatans = Kegiatan::all();
         $role = Auth::user()->role;
         $users = User::where('role', 'klub')->get();
-        return view('Admin.dashboardadmin', compact('beritas', 'kegiatans','role','users','clubs','countc','countk','countb'));
+        return view('Admin.dashboard', compact('beritas', 'kegiatans','role','users','clubs','countc','countk','countb'));
     }
 
     public function profileadmin()
