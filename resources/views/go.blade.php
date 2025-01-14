@@ -1,6 +1,19 @@
 <x-layout>
   <x-navbar></x-navbar>
-  <x-header></x-header>
+  <div class="relative w-full h-full">
+  <!-- Gambar -->
+  <img src="css/img/background.png" alt="Gradient Image" class="w-full h-full object-cover">
+
+  <!-- Overlay gradasi -->
+  <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-transparent"></div>
+
+  <!-- Konten di atas gambar -->
+  <div class="absolute left-0 top-1/2 transform -translate-y-1/2 p-6 pl-8 text-white">
+    <h1 class="text-5xl font-bold mb-4">Gabung Bersama Kami</h1>
+    <p class="text-lg mb-6">Tingkatkan Prestasi Renangmu dengan Pelatihan Profesional</p>
+    <a href="/login" class="px-6 py-3 bg-blue-800 text-white font-semibold rounded-lg hover:bg-blue-600">Gabung Sekarang</a>
+  </div>
+</div>
   <section class="py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold text-center text-gray-800 mb-8" id="berita">Berita Terbaru</h2>
