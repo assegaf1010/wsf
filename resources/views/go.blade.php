@@ -14,7 +14,7 @@
     <div class="absolute left-0 top-1/2 transform -translate-y-1/2 p-6 pl-8 text-white">
       <h1 class="text-5xl font-bold mb-4">Gabung Bersama Kami</h1>
       <p class="text-lg mb-6">Tingkatkan Prestasi Renangmu dengan Pelatihan Profesional</p>
-      <a href="{{ route('login') }}" class="px-6 py-3 bg-blue-800 text-white font-semibold rounded-lg hover:bg-blue-600">
+      <a href="/login" class="px-6 py-3 bg-blue-800 text-white font-semibold rounded-lg hover:bg-blue-600">
         Gabung Sekarang
       </a>
     </div>
@@ -34,7 +34,7 @@
             <div class="p-6">
               <h3 class="text-xl font-semibold mb-2">{{ $berita->title }}</h3>
               <p class="text-gray-600 text-sm mb-4">{{ Str::limit($berita->deskripsi, 100) }}</p>
-              <a href="{{ route('beritadet', $berita->slug) }}" class="text-blue-600 hover:text-blue-800 font-medium">
+              <a href="/beritadet/{{ $berita->slug }}" class="text-blue-600 hover:text-blue-800 font-medium">
                 Baca Selengkapnya →
               </a>
             </div>
@@ -44,7 +44,7 @@
 
       <!-- Tombol Berita Lainnya -->
       <div class="text-center mt-10">
-        <a href="{{ route('berita') }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+        <a href="/berita" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
           Lihat Berita Lainnya
         </a>
       </div>
@@ -61,7 +61,7 @@
             <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ $kegiatan->title }}</h3>
             <p class="text-gray-600 mb-1">Tanggal: {{ $kegiatan->jadwal }}</p>
             <p class="text-gray-600 mb-4">Arena: {{ $kegiatan->tempat }}</p>
-            <a href="{{ route('kegiatandet', $kegiatan->slug) }}" class="text-blue-600 hover:text-blue-800 font-medium">
+            <a href="/kegiatandet/{{ $kegiatan->slug }}" class="text-blue-600 hover:text-blue-800 font-medium">
               Lihat Detail →
             </a>
           </div>
@@ -70,7 +70,7 @@
 
       <!-- Tombol Jadwal Lainnya -->
       <div class="text-center mt-10">
-        <a href="{{ route('kegiatan') }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+        <a href="/kegiatan" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
           Lihat Semua Jadwal
         </a>
       </div>
