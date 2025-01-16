@@ -11,6 +11,7 @@ use App\Models\Berita;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class KlubController extends Controller
 {
@@ -46,16 +47,20 @@ class KlubController extends Controller
                 'role' => 'klub',
             ]);
 
-            // Tangani penyimpanan logo dengan fallback
-            try {
-                $logoPath = $request->file('logo')->store('img/logo', 'public');
-            } catch (\Exception $e) {
-                $tempDir = sys_get_temp_dir() . '/img/logo';
-                if (!file_exists($tempDir)) {
-                    mkdir($tempDir, 0777, true);
+            // Tangani penyimpanan logo
+            $logoPath = null;
+            if ($request->hasFile('logo')) {
+                try {
+                    $logoPath = $request->file('logo')->store('img/logo', 'public');
+                } catch (\Exception $e) {
+                    // Fallback jika penyimpanan gagal
+                    $tempDir = sys_get_temp_dir() . '/img/logo';
+                    if (!file_exists($tempDir)) {
+                        mkdir($tempDir, 0777, true);
+                    }
+                    $logoPath = $tempDir . '/' . uniqid() . '.' . $request->file('logo')->getClientOriginalExtension();
+                    $request->file('logo')->move($tempDir, basename($logoPath));
                 }
-                $logoPath = $tempDir . '/' . uniqid() . '.' . $request->file('logo')->getClientOriginalExtension();
-                $request->file('logo')->move($tempDir, basename($logoPath));
             }
 
             // Simpan data klub

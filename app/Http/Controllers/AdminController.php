@@ -1,18 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Berita;
 use App\Models\Kegiatan;
 use App\Models\Club;
 use App\Models\Atlet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use App\Models\User;
-
 
 class AdminController extends Controller
 {
-
     public function dashboard()
     {
         $clubs = Club::all();
@@ -23,37 +23,30 @@ class AdminController extends Controller
         $kegiatans = Kegiatan::all();
         $role = Auth::user()->role;
         $users = User::where('role', 'klub')->get();
-        return view('Admin.dashboardadmin', compact('beritas', 'kegiatans','role','users','clubs','countc','countk','countb'));
+        return view('Admin.dashboardadmin', compact('beritas', 'kegiatans', 'role', 'users', 'clubs', 'countc', 'countk', 'countb'));
     }
 
     public function profileadmin()
     {
-        return view ('Admin.profileadmin');
+        return view('Admin.profileadmin');
     }
 
     public function klubadmin()
     {
         $clubs = Club::all();
-        return view ('Admin.klubadmin', compact('clubs'));
+        return view('Admin.klubadmin', compact('clubs'));
     }
 
     public function atletadmin()
     {
-
         $atlets = Atlet::all();
-        return view ('Admin.atletadmin', compact('atlets'));
+        return view('Admin.atletadmin', compact('atlets'));
     }
-
-
-
-
 
     public function kegiatanadmin()
     {
-
         $kegiatans = Kegiatan::all();
-
-        return view ('Admin.kegiatanadmin', compact('kegiatans'));
+        return view('Admin.kegiatanadmin', compact('kegiatans'));
     }
 
     public function kegiatanadmindet(Kegiatan $kegiatan)
@@ -61,17 +54,11 @@ class AdminController extends Controller
         return view('Kegiatan.kegiatanadmindet', ['kegiatan' => $kegiatan]);
     }
 
-
-
-
-
     public function pengumumanadmin()
     {
         $beritas = Berita::all();
-
-        return view ('Admin.pengumumanadmin', compact('beritas'));
+        return view('Admin.pengumumanadmin', compact('beritas'));
     }
-
 
     public function pengumumanadmindet(Berita $berita)
     {
@@ -97,35 +84,39 @@ class AdminController extends Controller
 
         // Update gambar jika ada file baru diupload
         if ($request->hasFile('gambar')) {
-            $path = $request->file('gambar')->store('public/berita');
-            $berita->gambar = basename($path);
+            // Hapus gambar lama jika ada
+            if ($berita->gambar) {
+                Storage::disk('public')->delete('img/berita/' . $berita->gambar);
+            }
+            // Simpan gambar baru
+            $gambarPath = $request->file('gambar')->store('img/berita', 'public');
+            $berita->gambar = basename($gambarPath);
         }
 
         $berita->save();
 
-        return redirect()->route('Admin.pengumumanadmindet', ['berita' => $berita->slug])
-        ->with('success', 'Berita berhasil diperbarui.');
-    
-
+        return redirect()
+            ->route('Admin.pengumumanadmindet', ['berita' => $berita->slug])
+            ->with('success', 'Berita berhasil diperbarui.');
     }
 
     public function detail($berita)
     {
-        // Misalnya, ambil data berita berdasarkan ID atau slug
         $berita = Berita::findOrFail($berita);
-
         return view('Admin.pengumumandet', compact('berita'));
     }
 
     public function destroy(Berita $berita)
     {
+        // Hapus gambar dari storage jika ada
+        if ($berita->gambar) {
+            Storage::disk('public')->delete('img/berita/' . $berita->gambar);
+        }
+
         $berita->delete();
 
         return redirect()
-            ->route('pengumumanadmin') // Ganti dengan rute yang sesuai untuk daftar pengumuman
+            ->route('pengumumanadmin')
             ->with('success', 'Pengumuman berhasil dihapus.');
     }
-
-    // Autentikasi
-
 }
