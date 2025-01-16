@@ -1,46 +1,33 @@
 {
     "version": 2,
     "builds": [
-      {
-        "src": "server.php",
-        "use": "vercel-php"
-      },
-      {
-        "src": "resources/**/*",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "public"
+        { "src": "/server.php", "use": "vercel-php@0.7.0" }
+    ],
+ "routes": [
+        { "src": "/build/(.*)", "dest": "/public/build/" },
+          {
+            "src": "/(.*)",
+            "dest": "/server.php"
         }
-      }
     ],
-    "routes": [
-      {
-        "src": "/build/(.*)",
-        "dest": "/public/build/$1"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/server.php"
-      }
-    ],
-    "buildCommand": "npm install && npm run build",
+        "buildCommand": "npm install && npm run build",
+    "outputDirectory": "public",
     "env": {
-      "APP_ENV": "production",
-      "APP_DEBUG": "true",
-      "APP_URL": "https://swimmingfederation.vercel.app/",
-      "APP_KEY": "base64:TGaVaXwhWgjn9akhE4SCSIjGG/cQqvICUQ+PgLA3Bs0=",
-      "ASSET_URL": "/",
-      "SESSION_DRIVER": "cookie",
-      "CACHE_DRIVER": "database",
-      "LOG_CHANNEL": "stderr",
-      "APP_CONFIG_CACHE": "/tmp/config.php",
-      "APP_EVENTS_CACHE": "/tmp/events.php",
-      "APP_PACKAGES_CACHE": "/tmp/packages.php",
-      "APP_ROUTES_CACHE": "/tmp/routes.php",
-      "APP_SERVICES_CACHE": "/tmp/services.php",
-      "VIEW_COMPILED_PATH": "/tmp/views",
-      "SSR_TEMP_PATH": "/tmp/ssr",
-      "NODE_PATH": "node"
+        "APP_ENV": "production",
+        "APP_DEBUG": "true",
+        "APP_URL": "https://swimmingfederation.vercel.app/",
+        "APP_KEY": "base64:TGaVaXwhWgjn9akhE4SCSIjGG/cQqvICUQ+PgLA3Bs0=",
+        "ASSET_URL": "/",
+        "SESSION_DRIVER": "cookie",
+        "CACHE_DRIVER": "database",
+        "LOG_CHANNEL": "stderr",
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "VIEW_COMPILED_PATH": "/tmp/views",
+        "SSR_TEMP_PATH": "/tmp/ssr",
+        "NODE_PATH": "node"
     }
-  }
-  
+}
