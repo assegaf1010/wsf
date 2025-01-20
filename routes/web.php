@@ -39,7 +39,7 @@ Route::group(['middleware' => ['auth'],['redirect.role:klub']], function () {
     Route::get('/atletklub', [Controllers\KlubController::class, 'atletklub'])->name('atletklub');
     Route::get('/kegiatanklub', [Controllers\KlubController::class, 'kegiatanklub'])->name('kegiatanklub');
     Route::get('/pengumumanklub', [Controllers\KlubController::class, 'pengumumanklub'])->name('pengumumanklub');
-    Route::get('/atlet/create', [Controllers\AtletController::class, 'create'])->name('Atlet.create');
+    Route::get('/Atlet/create', [Controllers\AtletController::class, 'create'])->name('Atlet.create');
     Route::post('/atlet', [Controllers\AtletController::class, 'store'])->name('Atlet.store');
 
     Route::get('/pengumumanklubdet', [Controllers\KlubController::class, 'pengumumanklubdet'])->name('pengumumanklubdet');
