@@ -4,9 +4,14 @@
     <!-- Profile Section -->
     <div class="flex flex-col items-center p-6 border-b">
       <a href="#" class="font-black text-3xl text-blue-600">WSF</a>
-      @foreach ($users as $user)
-      <span class="font-bold text-xs text-center text-blue-600 ml-2">{{$user->nama_club}}</span>
-      @endforeach
+      @if (isset($users))
+    @foreach ($users as $user)
+        <p>{{ $user->name }}</p>
+    @endforeach
+    @else
+        <p>No users available.</p>
+    @endif
+
     </div>
 
     <!-- Menu Items -->
