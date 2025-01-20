@@ -15,8 +15,8 @@ Route::get('/', Controllers\PageController::class);
 
 // Rute Detail
 
-Route::get('/beritadet/{berita:slug}', [Controllers\BeritaController::class, 'show'])->name('berita.show');
-Route::get('/kegiatandet/{kegiatan:slug}', [Controllers\KegiatanController::class, 'show'])->name('kegiatan.show');
+Route::get('/beritadet/{berita:slug}', [Controllers\BeritaController::class, 'show'])->name('Berita.show');
+Route::get('/kegiatandet/{kegiatan:slug}', [Controllers\KegiatanController::class, 'show'])->name('Kegiatan.show');
 
 // Rute Page
 Route::get('/berita', [Controllers\PageController::class, 'berita'])->name('berita');
@@ -39,11 +39,11 @@ Route::group(['middleware' => ['auth'],['redirect.role:klub']], function () {
     Route::get('/atletklub', [Controllers\KlubController::class, 'atletklub'])->name('atletklub');
     Route::get('/kegiatanklub', [Controllers\KlubController::class, 'kegiatanklub'])->name('kegiatanklub');
     Route::get('/pengumumanklub', [Controllers\KlubController::class, 'pengumumanklub'])->name('pengumumanklub');
-    Route::get('/atlet/create', [Controllers\AtletController::class, 'create'])->name('atlet.create');
-    Route::post('/atlet', [Controllers\AtletController::class, 'store'])->name('atlet.store');
+    Route::get('/atlet/create', [Controllers\AtletController::class, 'create'])->name('Atlet.create');
+    Route::post('/atlet', [Controllers\AtletController::class, 'store'])->name('Atlet.store');
 
     Route::get('/pengumumanklubdet', [Controllers\KlubController::class, 'pengumumanklubdet'])->name('pengumumanklubdet');
-    Route::get('/pengumumanklubdet/{berita:slug}', [Controllers\KlubController::class, 'pengumumanklubdet'])->name('klub.pengumumanklubdet');
+    Route::get('/pengumumanklubdet/{berita:slug}', [Controllers\KlubController::class, 'pengumumanklubdet'])->name('Klub.pengumumanklubdet');
 
     Route::get('/kegiatanklubdet/{kegiatan:slug}', [COntrollers\KlubController::class, 'kegiatanklubdet'])->name('Kegiatan.kegiatanklubdet');
 
