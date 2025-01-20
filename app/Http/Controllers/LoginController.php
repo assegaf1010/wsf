@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use App\Models\Club;
+use App\Models\Atlet;
+use App\Models\Kegiatan;
+use App\Models\Berita;
 
 class LoginController extends Controller
 {
@@ -42,5 +47,15 @@ class LoginController extends Controller
 
         // Jika autentikasi gagal
         return back()->withErrors(['email' => 'Email atau password salah.']);
+    }
+
+    public function dashboard()
+    {
+        $klub = Auth::user();
+        $users = User::all();
+        $clubs = Club::all();
+        $beritas = Berita::all();
+        $kegiatans = Kegiatan::all();
+        return view('Klub.dashboard', compact('klub', 'clubs', 'users', 'beritas', 'kegiatans'));
     }
 }
