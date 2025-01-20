@@ -22,7 +22,6 @@ class KlubController extends Controller
         $clubs = Club::all();
         $beritas = Berita::all();
         $kegiatans = Kegiatan::all();
-
         return view('Klub.dashboard', compact('klub', 'clubs', 'users', 'beritas', 'kegiatans'));
     }
 
